@@ -13,9 +13,9 @@ searchBar.addEventListener('keydown', function(event){
 button.addEventListener('click', searchMusic);
 
 
-function clearResults(){
-  resultsCont.innerHTML = "";
-}
+
+
+
 
 
 //The goods are below
@@ -24,6 +24,9 @@ function clearResults(){
 // ${artistViewUrl}
 // US
 
+function clearResults(){
+  resultsCont.innerHTML = "";
+}
 
 function searchMusic(){
   let input = encodeURI(searchBar.value);
@@ -35,13 +38,16 @@ function searchMusic(){
     .then( function (data) {
       return data.json();
     })
+    // .then( function (data) {
+    //   console.log(data);
+    // })
     .then( function (data) {
 
       for(i=0;i<20;i++){
         let item = data.results;
         let tmpl =
           `<div class="resultItem">
-            <img src="${item[i].artworkUrl100}" alt="Album Cover">
+            <img class="albumArt" src="${item[i].artworkUrl100}" alt="Album Cover">
             <a class="songTitle" href="${item[i].trackViewUrl}"><p>${item[i].trackName}</p></a>
             <a class="artistName" href="${item[i].artistViewUrl}"><p>${item[i].artistName}</p></a>
           </div>`;
