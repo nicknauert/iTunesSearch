@@ -1,0 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  background-image: linear-gradient(165deg, rgb(52, 1, 87), rgb(34, 2, 51));
+  padding: 25px 45px;
+}
+
+
+/* ================= Header ================ */
+
+header {
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  height: 100px;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgb(168, 102, 213);
+  font-size: 45px;
+}
+
+
+/*make this cooler!!*/
+
+.music-player {
+  width: 50%;
+  height: 55px;
+  border-radius: 10px;
+}
+
+hr {
+  margin: 20px 0;
+  border-color: rgb(123, 41, 180);
+}
+
+
+/* ================= Search Bar ================ */
+
+.textInput {
+  width: 280px;
+  margin-right: 10px;
+  border: 1px solid rgb(123, 41, 180);
+  background-color: rgba(36, 1, 70, 0);
+  color: rgb(168, 102, 213);
+  border-radius: 10px;
+  padding: 3px 0 3px 10px;
+  font-size: 18px;
+}
+
+.textInput:focus {
+  outline: none;
+}
+
+.textInput::placeholder {
+  color: rgb(103, 18, 161);
+  font-style: italic;
+}
+
+.searchBtn {
+  height: 30px;
+  color: rgb(168, 102, 213);
+  border: 1px solid rgb(123, 41, 180);
+  background-color: rgba(36, 1, 70, 0);
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 3px 14px;
+}
+
+
+/* ================= Results Area ================ */
+
+.results {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.resultItem {
+  width: 13%;
+  margin: 20px 40px;
+  text-align: center;
+}
+
+.resultItem>img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.songTitle {
+  font-size: 14px;
+  margin-top: 3px;
+  color: rgb(156, 61, 221);
+}
+
+.artistName {
+  font-size: 19px;
+  color: rgb(125, 35, 190);
+}
