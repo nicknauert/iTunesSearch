@@ -9,6 +9,9 @@
 
 body {
   background-image: linear-gradient(165deg, rgb(52, 1, 87), rgb(34, 2, 51));
+  background-repeat: no-repeat;
+  background-size: 100vw 100vh;
+  background-attachment: fixed;
   padding: 25px 45px;
 }
 
@@ -25,7 +28,7 @@ header {
 }
 
 h1 {
-  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
   letter-spacing: 1px;
   color: rgb(168, 102, 213);
   font-size: 45px;
@@ -98,13 +101,29 @@ hr {
   margin: 0 auto;
 }
 
-.songTitle {
+.resultItem>a {
+  text-decoration: none;
+}
+
+.songTitle>p {
+  transition: .5s;
   font-size: 14px;
   margin-top: 3px;
   color: rgb(156, 61, 221);
 }
 
-.artistName {
+.songTitle>p:hover {
+  transition: .5s;
+  color: rgb(175, 83, 237);
+}
+
+.artistName>p {
   font-size: 19px;
   color: rgb(125, 35, 190);
+  transition: .5s;
+}
+
+.artistName>p:hover {
+  transition: .5s;
+  color: rgb(140, 50, 205);
 }
