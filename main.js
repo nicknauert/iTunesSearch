@@ -1,6 +1,7 @@
 let searchBar = document.querySelector(".textInput");
 let button = document.querySelector(".searchBtn");
 let resultsCont = document.querySelector(".results");
+let player = document.querySelector('.music-player');
 
 searchBar.addEventListener('keydown', function(event){
   if (event.which == 13 || event.keyCode == 13) {
@@ -12,12 +13,6 @@ searchBar.addEventListener('keydown', function(event){
 
 button.addEventListener('click', searchMusic);
 
-
-
-
-
-
-
 //The goods are below
 //
 //${artistName} ${artworkUrl100} ${trackName} ${previewUrl} ${trackViewUrl}
@@ -28,9 +23,14 @@ function clearResults(){
   resultsCont.innerHTML = "";
 }
 
+function playSong(url){
+  player.setAttribute("src", url);
+}
+
 function searchMusic(){
   let input = encodeURI(searchBar.value);
-  let url = "https://itunes.apple.com/search?term=" + input + "&country=US";
+  let url = "https://itunes.apple.com/search?term=" + input + "&country=US&media=music";
+
 
   clearResults();
 
@@ -39,7 +39,7 @@ function searchMusic(){
       return data.json();
     })
     // .then( function (data) {
-    //   console.log(data);
+    //   console.log(data)"
     // })
     .then( function (data) {
 
@@ -47,7 +47,7 @@ function searchMusic(){
         let item = data.results;
         let tmpl =
           `<div class="resultItem">
-            <img class="albumArt" src="${item[i].artworkUrl100}" alt="Album Cover">
+            <img class="albumArt" src="${item[i].artworkUrl100}" alt="Album Cover" onclick='playSong("${item[i].previewUrl}")'>
             <a class="songTitle" href="${item[i].trackViewUrl}"><p>${item[i].trackName}</p></a>
             <a class="artistName" href="${item[i].artistViewUrl}"><p>${item[i].artistName}</p></a>
           </div>`;
@@ -55,4 +55,5 @@ function searchMusic(){
           resultsCont.innerHTML += tmpl;
       }
     })
+    searchBar.value = "";
 }
