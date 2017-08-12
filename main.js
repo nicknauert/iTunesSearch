@@ -5,6 +5,7 @@ const resultsCont = document.querySelector(".results");
 const player = document.querySelector('.music-player');
 const progressBar = document.querySelector(".progressBar");
 const volumeSlider = document.querySelector(".volume");
+const playerText = document.querySelector(".playerText")
 let audioState = false;
 
 
@@ -61,6 +62,10 @@ function updateVolume(){
   console.log(volumeVal);
 }
 
+function updateText(name){
+  playerText.innerHTML = name
+}
+
 // =============== Search Function =====================
 
 
@@ -86,8 +91,10 @@ function searchMusic(){
         let item = data.results;
         let tmpl =
           `<div class="resultItem">
-            <img class="hoverPlay" src="img/playsolid.png" alt="">
-            <img class="albumArt" src="${item[i].artworkUrl100}" alt="Album Cover" onclick='playSong(createSong("${item[i].previewUrl}"))'>
+            <div class="hoverCont">
+              <img class="hoverPlay" src="img/playsolid.png" alt="" onclick='playSong(createSong("${item[i].previewUrl}")), updateText("${item[i].trackName} - ${item[i].artistName}")'>
+            </div>
+            <img class="albumArt" src="${item[i].artworkUrl100}" alt="Album Cover">
             <a class="songTitle" href="${item[i].trackViewUrl}"><p>${item[i].trackName}</p></a>
             <a class="artistName" href="${item[i].artistViewUrl}"><p>${item[i].artistName}</p></a>
           </div>`;

@@ -46,15 +46,20 @@ h3 {
 
 .myPlayer {
   position: absolute;
-  right: 5%;
-  top: 40px;
+  right: 10%;
+  top: 143px;
 }
 
 .playCont {
   border: 1px solid rgb(123, 41, 180);
   border-radius: 10px;
   height: 60px;
-  width: 300px;
+  width: 290px;r
+  text-align: center;r
+}
+
+.playerText {
+  color: rgb(123, 41, 180);
 }
 
 .playBtn {
@@ -69,7 +74,7 @@ h3 {
   appearance: none;
   position: absolute;
   left: 77px;
-  top: 0;
+  bottom: 0;
   height: 20px;
 }
 
@@ -86,14 +91,14 @@ h3 {
 
 .volume {
   position: absolute;
-  right: 10px;
-  top: 25px;
+  right: 0;
+  top: 27px;
   transform: rotateZ(-90deg);
   width: 50px;
   -webkit-appearance: none;
   background: transparent;
   border: 1px solid rgb(123, 41, 180);
-  height: 8px;
+  height: 6px;
 }
 
 .volume:focus {
@@ -105,20 +110,10 @@ h3 {
   width: 10px;
   height: 10px;
   background-color: rgb(123, 41, 180);
+  border-radius: 100%;
 }
 
-.volume::-webkit-slider
 
-
-
-/*====== old ======
-
-*/
-.music-player {
-  width: 50%;
-  height: 55px;
-  border-radius: 10px;
-}
 
 hr {
   margin: 20px 0;
@@ -127,6 +122,10 @@ hr {
 
 
 /* ================= Search Bar ================ */
+
+.search-form {
+  padding-left: 40px;
+}
 
 .textInput {
   width: 280px;
@@ -186,21 +185,29 @@ hr {
   text-align: center;
 }
 
+.hoverCont {
+  width: 100%;
+  height: inherit;
+  padding-right: 40%;
+  opacity: 0;
+  transition: .3s ease;
+}
+
+.hoverCont:hover {
+  transition: .3s ease;
+  opacity: .7;
+}
+
 .hoverPlay {
-  opacity: 1;
   position: absolute;
-  width: 50px;
+  width: 6%;
+  margin-top: 23px;
 }
 
 .albumArt {
   width: 100%;
   margin: 0 auto;
   box-shadow: 0px 5px 15px 3px rgba(0, 0, 0, 0.26);
-  transition: .3s;
-}
-
-.albumArt:hover {
-  opacity: .7;
   transition: .3s;
 }
 
