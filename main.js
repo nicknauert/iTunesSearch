@@ -59,7 +59,6 @@ function playSong(song){ /* plays song and tethers progress bar to time*/
 function updateVolume(){
   let volumeVal = volumeSlider.value / 100;
   audio.volume = volumeVal;
-  console.log(volumeVal);
 }
 
 function updateText(name){
