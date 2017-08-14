@@ -36,12 +36,12 @@ function createSong(url){ /*creates the audio object*/
 function toggleSong(song){  /*makes play button play/pause*/
   if(audioState === true){
     song.pause();
-    playBtn.setAttribute("src", "img/pause.png");
+    playBtn.setAttribute("src", "img/playsolid.png");
     audioState = false;
   }
   else {
     song.play();
-    playBtn.setAttribute("src", "img/playsolid.png");
+    playBtn.setAttribute("src", "img/pause.png");
     audioState = true;
   }
 }

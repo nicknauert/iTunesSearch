@@ -42,8 +42,6 @@ h3 {
   left: -25px;
 }
 
-/*make this cooler!!*/
-
 .myPlayer {
   position: absolute;
   right: 10%;
@@ -51,15 +49,23 @@ h3 {
 }
 
 .playCont {
-  border: 1px solid rgb(123, 41, 180);
-  border-radius: 10px;
+  border-left: 1px solid rgb(123, 41, 180);
+  border-right: 1px solid rgb(123, 41, 180);
+  /*border-radius: 7px;*/
   height: 60px;
-  width: 290px;r
-  text-align: center;r
+  width: 290px;
+  text-align: left;
+
 }
 
 .playerText {
   color: rgb(123, 41, 180);
+  position: absolute;
+  width: 157px;
+  left: 78px;
+  top: -1px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .playBtn {
@@ -74,19 +80,19 @@ h3 {
   appearance: none;
   position: absolute;
   left: 77px;
-  bottom: 0;
+  bottom: 21px;
   height: 20px;
 }
 
 .progressBar::-webkit-progress-value {
   background-color: rgb(123, 41, 180);
-  border-radius: 5px;
+  border-radius: 3px;
 
 }
 .progressBar::-webkit-progress-bar {
   border: 1px solid #7b29b4;
   background-color: rgba(123, 41, 180, 0.25);
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .volume {
@@ -107,13 +113,11 @@ h3 {
 
 .volume::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 12px;
   background-color: rgb(123, 41, 180);
-  border-radius: 100%;
+  border-radius: 2px;
 }
-
-
 
 hr {
   margin: 20px 0;
@@ -124,7 +128,7 @@ hr {
 /* ================= Search Bar ================ */
 
 .search-form {
-  padding-left: 40px;
+  padding-left: 55px;
 }
 
 .textInput {
